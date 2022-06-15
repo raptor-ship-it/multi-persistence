@@ -9,8 +9,10 @@ target/
 *.class
 .settings/
 logs
+.iml
 
 ### IntelliJ IDEA ###
+.idea
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
