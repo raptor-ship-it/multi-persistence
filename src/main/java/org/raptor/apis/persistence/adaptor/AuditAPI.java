@@ -33,7 +33,6 @@ public class AuditAPI {
 
     @GetMapping(path = "/all" , produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getAllAPIAudit() {
-        System.out.println("audit API");
         LOGGER.info("audit" , "getAllAPIAudit");
         /* --- create a new audit for this call --- */
         final Audit audit = new Audit();

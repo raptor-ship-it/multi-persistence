@@ -26,7 +26,6 @@ public class StudentService {
     }
 
     public Students addStudent( final Students student ) {
-        System.out.println("In Student Service");
         return studentRepository.save( student );
     }
 
