@@ -2,6 +2,7 @@ package org.raptor.apis.persistence.service;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.raptor.apis.persistence.domain.integration.data.mysql.StudentRepository;
 import org.raptor.apis.persistence.domain.integration.model.Students;
 import org.raptor.apis.persistence.execute.Application;
@@ -11,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.containers.output.OutputFrame;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
@@ -19,12 +21,10 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.Date;
 
-@SpringBootTest(classes = Application.class )
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
-@Testcontainers
 
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE , classes = Application.class)
+@Testcontainers
 @ActiveProfiles("mysql")
-//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class StudentServiceTest {
 
     @Autowired
