@@ -2,7 +2,6 @@ package org.raptor.apis.persistence.service;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.raptor.apis.persistence.domain.integration.data.mysql.StudentRepository;
 import org.raptor.apis.persistence.domain.integration.model.Students;
 import org.raptor.apis.persistence.execute.Application;
@@ -12,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.containers.output.OutputFrame;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
@@ -52,12 +50,10 @@ public class StudentServiceTest {
     @Test
     public void addStudent() {
         System.out.println(databaseContainer.getLogs(OutputFrame.OutputType.STDOUT));
-
-        Students students = new Students();
+        final Students students = new Students();
         students.setFirstName("Kuldip");
         students.setLastName("Bajwa");
         students.setDateOfBirth(new Date());
-
         Students _student = studentRepository.save(students);
 
         Assert.assertNotNull("student object not saved" , _student);
